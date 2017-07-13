@@ -1,5 +1,7 @@
 package com.sample.ds;
 
+import com.sample.ds.exception.EmptyStackException;
+
 public class ArrayStack<T> implements StackDS<T> {
 
 	Object[] arr;
@@ -30,7 +32,11 @@ public class ArrayStack<T> implements StackDS<T> {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public T pop() {
+	public T pop() throws EmptyStackException {
+
+		if (index == 0) {
+			throw new EmptyStackException();
+		}
 
 		T item = (T) arr[--index];
 		// To handle loitering

@@ -2,9 +2,9 @@ package com.sample.ds;
 
 public interface QueueDS<E> {
 
-	void add(E obj);
+	void addLast(E obj);
 
-	E remove() throws Exception;
+	E removeFirst() throws Exception;
 
 	boolean isEmpty();
 

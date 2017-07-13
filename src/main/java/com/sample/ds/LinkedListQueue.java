@@ -2,6 +2,11 @@ package com.sample.ds;
 
 import com.sample.ds.exception.EmptyQueueException;
 
+/**
+ * Linked list implementation of a Queue. Does all inserts and deletes in O(1)
+ * 
+ */
+
 public class LinkedListQueue<T> implements QueueDS<T> {
 
 	private Node first;
@@ -15,7 +20,7 @@ public class LinkedListQueue<T> implements QueueDS<T> {
 		private Node next;
 	}
 
-	public void add(T objectToAdd) {
+	public void addLast(T objectToAdd) {
 		Node oldLast = last;
 		last = new Node();
 		last.value = objectToAdd;
@@ -28,7 +33,7 @@ public class LinkedListQueue<T> implements QueueDS<T> {
 
 	}
 
-	public T remove() throws EmptyQueueException {
+	public T removeFirst() throws EmptyQueueException {
 		if (isEmpty()) {
 			throw new EmptyQueueException();
 		}

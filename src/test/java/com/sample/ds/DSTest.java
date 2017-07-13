@@ -29,27 +29,27 @@ public class DSTest extends TestCase {
 
 	public void testLinkedListQueueDS() throws EmptyQueueException {
 		LinkedListQueue<String> queue = new LinkedListQueue<>();
-		queue.add("s");
-		Assert.assertEquals("s", queue.remove());
-		queue.add("r");
-		Assert.assertEquals("r", queue.remove());
-		queue.add("i");
-		queue.add("n");
-		queue.add("i");
+		queue.addLast("s");
+		Assert.assertEquals("s", queue.removeFirst());
+		queue.addLast("r");
+		Assert.assertEquals("r", queue.removeFirst());
+		queue.addLast("i");
+		queue.addLast("n");
+		queue.addLast("i");
 		Assert.assertEquals("i,n,i", queue.toString());
-		Assert.assertEquals("i", queue.remove());
-		Assert.assertEquals("n", queue.remove());
-		Assert.assertEquals("i", queue.remove());
+		Assert.assertEquals("i", queue.removeFirst());
+		Assert.assertEquals("n", queue.removeFirst());
+		Assert.assertEquals("i", queue.removeFirst());
 		Assert.assertEquals("null", queue.toString());
 		try {
-			Assert.assertEquals("s", queue.remove());
+			Assert.assertEquals("s", queue.removeFirst());
 			fail();
 		} catch (EmptyQueueException e) {
 
 		}
 	}
 
-	public void testArrayStack() throws EmptyStackException {
+	public void testArrayStackDS() throws EmptyStackException {
 		StackDS<String> stackDS = new ArrayStack<String>();
 		stackDS.push("s");
 		Assert.assertEquals("s", stackDS.pop());
@@ -60,8 +60,10 @@ public class DSTest extends TestCase {
 		Assert.assertEquals("i", stackDS.pop());
 		stackDS.push("n");
 		stackDS.push("i");
+		Assert.assertEquals(2, stackDS.size());
 		Assert.assertEquals("i", stackDS.pop());
 		Assert.assertEquals("n", stackDS.pop());
+		Assert.assertEquals(0, stackDS.size());
 		try {
 			stackDS.pop();
 			fail();
