@@ -2,6 +2,7 @@ package com.sample.ds;
 
 import com.sample.ds.exception.EmptyQueueException;
 import com.sample.ds.exception.EmptyStackException;
+import com.sample.ds.other.QueueUsingStacks;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
@@ -68,6 +69,28 @@ public class StackQueueTest extends TestCase {
 			stackDS.pop();
 			fail();
 		} catch (EmptyStackException e) {
+		}
+	}
+
+	public void testQueueUsingStackDS() throws EmptyQueueException {
+		QueueDS<String> queue = new QueueUsingStacks<String>();
+		queue.addLast("s");
+		Assert.assertEquals("s", queue.removeFirst());
+		queue.addLast("r");
+		Assert.assertEquals("r", queue.removeFirst());
+		queue.addLast("i");
+		queue.addLast("n");
+		Assert.assertEquals(2, queue.size());
+		queue.addLast("i");
+		Assert.assertEquals("i", queue.removeFirst());
+		Assert.assertEquals("n", queue.removeFirst());
+		Assert.assertEquals("i", queue.removeFirst());
+		Assert.assertEquals(0, queue.size());
+		try {
+			Assert.assertEquals("s", queue.removeFirst());
+			fail();
+		} catch (EmptyQueueException e) {
+
 		}
 	}
 

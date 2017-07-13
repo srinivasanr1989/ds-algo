@@ -1,5 +1,7 @@
 package com.sample.ds;
 
+import com.sample.ds.appl.ExpressionBalancerTest;
+
 import junit.framework.TestResult;
 import junit.framework.TestSuite;
 
@@ -24,6 +26,7 @@ public class AppTestSuite extends TestSuite {
 		TestSuite testSuite = new TestSuite();
 		testSuite.addTestSuite(StackQueueTest.class);
 		testSuite.addTestSuite(DoubleLinkedListDequeTest.class);
+		testSuite.addTestSuite(ExpressionBalancerTest.class);
 		return testSuite;
 	}
 

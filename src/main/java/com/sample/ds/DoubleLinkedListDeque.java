@@ -41,7 +41,7 @@ public class DoubleLinkedListDeque<E> implements DequeDS<E> {
 
 	/* Removes an element from the rear/end of the list */
 	@Override
-	public E removeFirst() throws Exception {
+	public E removeFirst() throws EmptyQueueException {
 		Node oldFront = null;
 		E item = null;
 		if (isEmpty()) {
