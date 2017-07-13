@@ -6,7 +6,7 @@ import com.sample.ds.exception.EmptyStackException;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 
-public class DSTest extends TestCase {
+public class StackQueueTest extends TestCase {
 
 	public void testLinkedListStack() throws EmptyStackException {
 		LinkedListStack<String> stackDS = new LinkedListStack<String>();
