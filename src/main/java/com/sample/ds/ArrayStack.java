@@ -66,4 +66,9 @@ public class ArrayStack<T> implements StackDS<T> {
 		arr = copy;
 	}
 
+	@Override
+	public T peek() {
+		return (T) arr[size() - 1];
+	}
+
 }

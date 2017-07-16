@@ -60,13 +60,17 @@ public class LinkedListStack<T> implements StackDS<T> {
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return size() == 0;
 	}
 
 	@Override
 	public int size() {
 		return length;
+	}
+
+	@Override
+	public T peek() {
+		return first.value;
 	}
 
 }

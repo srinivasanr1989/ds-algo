@@ -10,6 +10,8 @@ public interface StackDS<E> {
 
 	boolean isEmpty();
 
+	E peek();
+
 	int size();
 
 }

@@ -1,6 +1,7 @@
 package com.sample.ds.appl;
 
 import com.sample.ds.exception.EmptyStackException;
+import com.sample.ds.stack.appl.ExpressionBalancer;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;

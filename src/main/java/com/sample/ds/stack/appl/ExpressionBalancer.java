@@ -1,4 +1,4 @@
-package com.sample.ds.appl;
+package com.sample.ds.stack.appl;
 
 import com.sample.ds.ArrayStack;
 import com.sample.ds.StackDS;
