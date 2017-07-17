@@ -1,4 +1,4 @@
-package com.sample.ds;
+package com.sample.ds.appl;
 
 import com.sample.ds.exception.EmptyStackException;
 import com.sample.ds.stack.appl.InfixToPostfixConverter;
@@ -13,6 +13,8 @@ public class InfixToPostfixConverterTest extends TestCase {
 		try {
 			Assert.assertEquals("abcd^e-fgh*+^*+i-", converter.convert("a+b*(c^d-e)^(f+g*h)-i"));
 			Assert.assertEquals("Invalid Expression", converter.convert("a+b*(c(^d-e)^(f+g*h)-i"));
+			Assert.assertEquals("Invalid Expression", converter.convert("a+b*(c^d-e)^(f+g*h))-i"));
+			Assert.assertEquals("Invalid Expression", converter.convert("a+b*(c^d-e^(f+g*h)-i"));
 		} catch (EmptyStackException e) {
 			fail();
 		}

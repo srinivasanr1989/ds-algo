@@ -14,17 +14,17 @@ public class InfixToPostfixConverter {
 			Character c = (Character) obj;
 			if (c.equals('(')) {
 				operatorStack.push(c);
-			} else if (Character.isLetterOrDigit(c) || c.equals('(')) {
+			} else if (Character.isLetterOrDigit(c)) {
 				result.append(c);
 			} else if (c.equals(')')) {
 				while (!operatorStack.isEmpty() && !operatorStack.peek().equals('(')) {
 					result.append(operatorStack.pop());
 				}
-				if (!operatorStack.isEmpty() && !operatorStack.peek().equals('(')) {
+				if (operatorStack.isEmpty() || (!operatorStack.isEmpty() && !operatorStack.peek().equals('('))) {
 					return "Invalid Expression";
-				} else {
-					operatorStack.pop();
 				}
+				operatorStack.pop();
+
 			} else {
 				while (!operatorStack.isEmpty() && (getPrecedence(c) <= getPrecedence(operatorStack.peek()))) {
 					result.append(operatorStack.pop());
