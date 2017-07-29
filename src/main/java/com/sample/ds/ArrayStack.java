@@ -71,4 +71,12 @@ public class ArrayStack<T> implements StackDS<T> {
 		return (T) arr[size() - 1];
 	}
 
+	public String toString() {
+		StringBuilder stackToString = new StringBuilder();
+		for (int i = 0; i < size(); i++) {
+			stackToString.append(arr[i]);
+		}
+		return stackToString.toString();
+	}
+
 }
